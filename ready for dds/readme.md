@@ -1,4 +1,4 @@
-##这个文档是做什么的？
+#这个文档是做什么的？
 
 用于帮助搭建FastDDS测试用的环境，运行我们的代码。
 通过走完该步骤，你能够在你的linux上进行FastDDS-python绑定的代码开发。
@@ -22,6 +22,7 @@
 ###1.1 Vmware虚拟机
 
 ####1.1.1虚拟机的下载和安装
+
 虚拟机安装包下载链接：https://pan.baidu.com/s/1fmgsY5-qFn-_WzJs31Q8lg  提取码：xiao
 虚拟机安装网址：vmware下载_vmware下载免费中文版客户端[虚拟机]-下载之家 (downza.cn)
 密钥：JU090-6039P-08409-8J0QH-2YR7F
@@ -118,6 +119,7 @@ vmware-toolbox-cmd -v
 
 
 ####1.1.2使用terminus来与你的虚拟机交互（可选）
+
 使用terminus来管理你的终端，实现**更舒服**的交互。
 要实现这项功能，你需要在安装的时候把OpenSSH装上，然后你可能需要输入 ip addr来拿到SSH的地址。
 ![](2024-02-20-14-49-13.png)
@@ -125,8 +127,6 @@ vmware-toolbox-cmd -v
 ![](2024-02-20-14-49-25.png)
 *通过ftp进行文件的传输和文件的管理*
     
-    
-
 
 ###1.2 WSL虚拟机（弃用）
 
@@ -136,6 +136,7 @@ vmware-toolbox-cmd -v
 
 
 ##1.2 miniconda的安装
+
 miniconda是anaconda的精简版本，[在此处可以进行安装。](https://docs.anaconda.com/free/miniconda/miniconda-install/)
 
 ![alt text](image-9.png)
@@ -338,6 +339,7 @@ Summary: 5 packages finished [5min 31s]
 echo 'source ~/Fast-DDS-python/install/setup.bash' >> ~/.bashrc
 ```
 ###1.3.3 Fast DDS-Gen 安装
+
 如果你在1.3.2步的源代码导入没问题，你可以在/Fast-DDS-python/src/fastddsgen下找到这个用于安装的文件夹而不用再次下载。
 ![alt text](image-24.png)
 
