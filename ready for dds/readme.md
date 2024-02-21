@@ -28,23 +28,23 @@
 虚拟机安装网址：vmware下载_vmware下载免费中文版客户端[虚拟机]-下载之家 (downza.cn)
 密钥：JU090-6039P-08409-8J0QH-2YR7F
 
-![](https://github.com/S1yang/Fastdds_beginner/img/image.png)
+![img](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image.png)
 
-![](https://github.com/S1yang/Fastdds_beginner/img/image-1.png)
+![img](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-1.png)
 
 **[注意]这里最好开8个G的内存**
-![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-15-17-06.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-17-06.png)
 
 
-![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-15-21-10.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-21-10.png)
 
-![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-15-22-26.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-22-26.png)
 
-![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-5.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-5.png)
 
 其他未经标注的地方，一律done。
 
-![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-6.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-6.png)
 
 创建并运行一个虚拟机后，你需要安装vmtools，这部分可以参考GPT给的答案：
 
