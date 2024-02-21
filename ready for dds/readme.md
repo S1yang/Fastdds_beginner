@@ -28,23 +28,23 @@
 虚拟机安装网址：vmware下载_vmware下载免费中文版客户端[虚拟机]-下载之家 (downza.cn)
 密钥：JU090-6039P-08409-8J0QH-2YR7F
 
-![](https://github.com/S1yang/Fastdds_beginner/image.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/image.png)
 
-![](https://github.com/S1yang/Fastdds_beginner/image-1.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/image-1.png)
 
 **[注意]这里最好开8个G的内存**
-![](2024-02-20-15-17-06.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-15-17-06.png)
 
 
-![](2024-02-20-15-21-10.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-15-21-10.png)
 
-![](2024-02-20-15-22-26.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-15-22-26.png)
 
-![alt text](image-5.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-5.png)
 
 其他未经标注的地方，一律done。
 
-![alt text](image-6.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-6.png)
 
 创建并运行一个虚拟机后，你需要安装vmtools，这部分可以参考GPT给的答案：
 
@@ -111,28 +111,28 @@
 
 使用 `open-vm-tools` 是在 Ubuntu 虚拟机上安装 VMware Tools 的推荐方法，因为它能够提供与 VMware 提供的原版 VMware Tools 相同的主要功能，且安装过程更简单、更快捷。
 
-![alt text](image-7.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-7.png)
 安装成功后，你可以输入如下指令来进行验证。
 ```bash 
 vmware-toolbox-cmd -v
 ```
-![alt text](image-8.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-8.png)
 
 
 #### 1.1.2 使用terminus来与你的虚拟机交互（可选）
 
 使用terminus来管理你的终端，实现**更舒服**的交互。
 要实现这项功能，你需要在安装的时候把OpenSSH装上，然后你可能需要输入 ip addr来拿到SSH的地址。
-![](2024-02-20-14-49-13.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-14-49-13.png)
 *通过SSH进行cmd交互*
-![](2024-02-20-14-49-25.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-14-49-25.png)
 *通过ftp进行文件的传输和文件的管理*
     
 
 ### 1.2 WSL虚拟机（弃用）
 
 相比于Vmware，WSL的优点是方便你可以直接使用主机的vscode或其他的编辑器去修改代码进行测试，可以直接通过windows的文件夹访问到linux文件夹。
-![](2024-02-20-14-38-38.png)
+![](https://github.com/S1yang/Fastdds_beginner/img/2024-02-20-14-38-38.png)
 但是它有个缺点，**它的网络模式使得我还没解决两台WSL虚拟机进行网络通信的问题**，这个问题使得我们不能进行多机的DDS代码调试。所以该方法基本上已经被弃用了。
 
 
@@ -140,13 +140,13 @@ vmware-toolbox-cmd -v
 
 miniconda是anaconda的精简版本，[在此处可以进行安装。](https://docs.anaconda.com/free/miniconda/miniconda-install/)
 
-![alt text](image-9.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-9.png)
 
 安装后，刷新一下环境变量
 ```bash
 source ~/.bashrc
 ```
-![alt text](image-10.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-10.png)
 
 当出现(base)时，说明我们的conda已经装好了。
 接着我们创建一个我们代码运行需要的环境，并激活该环境，最好将该环境直接添加到启动脚本里去。
@@ -172,7 +172,7 @@ conda deactivate
 sudo apt install nano
 nano ~/.bashrc
 ```
-![alt text](image-11.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/img/image-11.png)
 
 ```bash
 source ~/.bashrc
