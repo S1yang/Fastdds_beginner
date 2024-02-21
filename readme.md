@@ -32,9 +32,8 @@
 
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-1.png)
 
-**[注意]这里最好开8个G的内存**
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-17-06.png)
-
+**[注意]这里最好开8个G的内存**
 
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-21-10.png)
 
@@ -132,7 +131,9 @@ vmware-toolbox-cmd -v
 ### 1.2 WSL虚拟机（弃用）
 
 相比于Vmware，WSL的优点是方便你可以直接使用主机的vscode或其他的编辑器去修改代码进行测试，可以直接通过windows的文件夹访问到linux文件夹。
+
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-14-38-38.png)
+
 但是它有个缺点，**它的网络模式使得我还没解决两台WSL虚拟机进行网络通信的问题**，这个问题使得我们不能进行多机的DDS代码调试。所以该方法基本上已经被弃用了。
 
 
@@ -140,7 +141,7 @@ vmware-toolbox-cmd -v
 
 miniconda是anaconda的精简版本，[在此处可以进行安装。](https://docs.anaconda.com/free/miniconda/miniconda-install/)
 
-![alt text](image-9.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-9.png)
 
 安装后，刷新一下环境变量
 ```bash
@@ -150,6 +151,7 @@ source ~/.bashrc
 
 当出现(base)时，说明我们的conda已经装好了。
 接着我们创建一个我们代码运行需要的环境，并激活该环境，最好将该环境直接添加到启动脚本里去。
+
 要使用Conda创建一个名为`ddsT`的环境，并指定Python版本为3.11.5，您可以在终端或命令提示符中运行以下命令：
 
 ```bash
@@ -178,6 +180,7 @@ nano ~/.bashrc
 source ~/.bashrc
 ```
 到目前为止，确保你正确地安装了conda，并创建了一个python==3.11.5的环境，你在linux下激活了该环境，这样我们就可以进行到下一步。
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-12.png)
 
 
@@ -185,7 +188,7 @@ source ~/.bashrc
 
 此为该文档中最重要也是内容最多的一步，由于[原本的教程](https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html)写的很散乱，且会遇到大大小小的坑，故在此对整个流程进行梳理。
 
-###3.1 依赖项的安装
+### 3.1 依赖项的安装
 
 
 ```bash
@@ -349,11 +352,13 @@ echo 'source ~/Fast-DDS-python/install/setup.bash' >> ~/.bashrc
 ### 3.3 Fast DDS-Gen 安装
 
 如果你在1.3.2步的源代码导入没问题，你可以在/Fast-DDS-python/src/fastddsgen下找到这个用于安装的文件夹而不用再次下载。
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-24.png)
 
 ```bash
 sudo apt install openjdk-11-jdk
 ```
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-25.png)
 
 
@@ -361,6 +366,7 @@ sudo apt install openjdk-11-jdk
 ./gradlew assemble
 ```
 这一步基本运行不了，因为它无法从网络上下来分发，[你可以在网站上把分发包下下来](https\://services.gradle.org/distributions/gradle-7.6-bin.zip)。
+
 然后按照我接下来的步骤进行修改：
 1.	找到或下载 Gradle 分发包：首先，确保您有 Gradle 的 .zip 分发包，并记下它在您本地文件系统上的绝对路径。比如，如果您的分发包位于 /path/to/gradle-7.6-bin.zip。
 2.	修改 gradle-wrapper.properties 文件：找到您项目中的 gradle-wrapper.properties 文件，这个文件通常位于 gradle/wrapper 目录下。
@@ -374,20 +380,27 @@ distributionUrl=file:///home/remake/Fast-DDS-python/src/fastddsgen/gradle/wrappe
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 ```
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-26.png)
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-27.png)
 
 接着，继续该命令：
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-29.png)
+
 最后，把scripts文件夹添加到环境变量：
+
 ```bash
 nano ~/.bashrc
 export PATH="$PATH:/home/remake/Fast-DDS-python/src/fastddsgen/scripts"
 source ~/.bashrc
 ```
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-30.png)
 
 如果你的fastddsgen安装成功，命令窗口输入fastddsgen应该有回应：
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-31.png)
 
 ## 4 FastDDS-例程的使用
@@ -398,18 +411,25 @@ source ~/.bashrc
 
 将dds_test_example文件夹复制到你的虚拟机中，并进入该目录。
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-32.png)
+
 接着，生成在 C++11 中实现此数据类型的源代码以及用于 Python 绑定的 SWIG 接口文件。
+
 ```bash
 fastddsgen -python DataSet.idl
 ```
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-33.png)
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-34.png)
+
 接着，使用cmake生成python绑定，必须成功生成与.idl同名的.py文件
+
 ```bash
 cmake .
 make
 ```
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-35.png)
+
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-36.png)
 
 ### 4.2 运行例程代码
@@ -488,11 +508,14 @@ python Node2.py
 reboot
 ```
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-44.png)
+
 你可以看到，克隆机获取了一个新的ip地址。
 
 ### 5.2 在终端上进行多机测试
+
 接下来，你可以在terminus上分别连接两个终端
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-45.png)
+
 接着，运行我们的代码：
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-46.png)
 
@@ -505,7 +528,7 @@ reboot
 3. 这种网络通信建立在虚拟机以NAT模式进行(一般是vm的默认模式)的情况下，如果你的vmware默认设置的是其他模式，你需要将其修改过来。
 
 
-##参考文章
+## 参考文章
 
 1. vm虚拟机资源:https://www.bilibili.com/video/BV1Vg4y1w7Es
 2. Linux installation from sources:https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html
