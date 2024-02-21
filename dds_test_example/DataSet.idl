@@ -1,0 +1,3 @@
+struct DataSet {
+	string	message;
+};

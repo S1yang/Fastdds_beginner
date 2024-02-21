@@ -1,10 +1,11 @@
-#这个文档是做什么的？
+# 这个文档是做什么的？
 
 用于帮助搭建FastDDS测试用的环境，运行我们的代码。
-通过走完该步骤，你能够在你的linux上进行FastDDS-python绑定的代码开发。
+通过走完该步骤，你能够在你的linux上进行FastDDS-python绑定的代码测试和开发。
 注：教程中有些步骤可能是冗余的，如果你的水平够高，可以尝试忽略。
+仓库地址:https://github.com/S1yang/Fastdds_beginner
 
-##内容说明
+## 内容说明
 
 该文档包含以下的一些软件的入门要求，在此基础上尽量做到通俗易懂：
 1.VScode 
@@ -12,16 +13,16 @@
 3.python与anaconda
 4.more...
 
-##1 安装Linux操作系统
+## 1 安装Linux操作系统
 
 我们的代码运行在linux上，为了在windows上进行开发和代码调试，你需要运行linux虚拟机，有两种方式，一种是Vmware(推荐)，另一种是wsl。
 为此，你需要一个linux镜像，我使用的是[ubuntu-22.04 LTS](https://releases.ubuntu.com/jammy/)
 *（推荐使用：ubuntu-22.04.3-live-server-amd64.iso）*
 
 
-###1.1 Vmware虚拟机
+### 1.1 Vmware虚拟机
 
-####1.1.1虚拟机的下载和安装
+#### 1.1.1虚拟机的下载和安装
 
 虚拟机安装包下载链接：https://pan.baidu.com/s/1fmgsY5-qFn-_WzJs31Q8lg  提取码：xiao
 虚拟机安装网址：vmware下载_vmware下载免费中文版客户端[虚拟机]-下载之家 (downza.cn)
@@ -50,7 +51,7 @@
 
 在 Ubuntu 虚拟机上安装 VMware Tools 可以提高虚拟机的性能和用户体验，例如改善鼠标性能、提供更好的屏幕分辨率支持和共享文件夹功能。以下是在 Ubuntu 上安装 VMware Tools 的步骤：
 
-#### 方法 1: 使用 VMware 提供的安装程序
+##### 方法 1: 使用 VMware 提供的安装程序
 
 1. **启动 Ubuntu 虚拟机**。
 2. 在 VMware 的菜单栏中，选择 **虚拟机** > **安装 VMware Tools**。这将挂载 VMware Tools 的 ISO 到 Ubuntu 虚拟机中的光驱。
@@ -84,7 +85,7 @@
    reboot
    ```
 
-#### 方法 2: 使用开源版本 Open-VM-Tools (推荐)
+##### 方法 2: 使用开源版本 Open-VM-Tools (推荐)
 
 对于大多数 Linux 发行版，包括 Ubuntu，推荐使用开源版本的 VMware Tools，即 `open-vm-tools`，因为它更容易安装且通常包含在发行版的软件仓库中。
 
@@ -118,7 +119,7 @@ vmware-toolbox-cmd -v
 ![alt text](image-8.png)
 
 
-####1.1.2使用terminus来与你的虚拟机交互（可选）
+#### 1.1.2 使用terminus来与你的虚拟机交互（可选）
 
 使用terminus来管理你的终端，实现**更舒服**的交互。
 要实现这项功能，你需要在安装的时候把OpenSSH装上，然后你可能需要输入 ip addr来拿到SSH的地址。
@@ -128,14 +129,14 @@ vmware-toolbox-cmd -v
 *通过ftp进行文件的传输和文件的管理*
     
 
-###1.2 WSL虚拟机（弃用）
+### 1.2 WSL虚拟机（弃用）
 
 相比于Vmware，WSL的优点是方便你可以直接使用主机的vscode或其他的编辑器去修改代码进行测试，可以直接通过windows的文件夹访问到linux文件夹。
 ![](2024-02-20-14-38-38.png)
 但是它有个缺点，**它的网络模式使得我还没解决两台WSL虚拟机进行网络通信的问题**，这个问题使得我们不能进行多机的DDS代码调试。所以该方法基本上已经被弃用了。
 
 
-##1.2 miniconda的安装
+##2 miniconda的安装
 
 miniconda是anaconda的精简版本，[在此处可以进行安装。](https://docs.anaconda.com/free/miniconda/miniconda-install/)
 
@@ -180,10 +181,10 @@ source ~/.bashrc
 ![alt text](image-12.png)
 
 
-##1.3 FastDDS-python绑定的安装
+## 3 FastDDS-python绑定的安装
 
 此为该文档中最重要也是内容最多的一步，由于[原本的教程](https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html)写的很散乱，且会遇到大大小小的坑，故在此对整个流程进行梳理。
-###1.3.1 依赖项的安装
+###3.1 依赖项的安装
 
 
 ```bash
@@ -200,7 +201,7 @@ sudo apt install libssl-dev
 
 ![alt text](image-16.png)
 
-###1.3.2 Fast DDS Python bindings 安装
+### 3.2 Fast DDS Python bindings 安装
 ```bash
 pip3 install -U colcon-common-extensions vcstool
 ```
@@ -338,7 +339,7 @@ Summary: 5 packages finished [5min 31s]
 ```bash
 echo 'source ~/Fast-DDS-python/install/setup.bash' >> ~/.bashrc
 ```
-###1.3.3 Fast DDS-Gen 安装
+### 3.3 Fast DDS-Gen 安装
 
 如果你在1.3.2步的源代码导入没问题，你可以在/Fast-DDS-python/src/fastddsgen下找到这个用于安装的文件夹而不用再次下载。
 ![alt text](image-24.png)
@@ -382,8 +383,121 @@ source ~/.bashrc
 如果你的fastddsgen安装成功，命令窗口输入fastddsgen应该有回应：
 ![alt text](image-31.png)
 
+## 4 FastDDS-例程的使用
+
+当你正确地安装了fastDDS的python绑定后，便可以尝试运行例程。
+
+### 4.1 为.idl文件生成python-C艹绑定
+
+将dds_test_example文件夹复制到你的虚拟机中，并进入该目录。
+![alt text](image-32.png)
+接着，生成在 C++11 中实现此数据类型的源代码以及用于 Python 绑定的 SWIG 接口文件。
+```bash
+fastddsgen -python DataSet.idl
+```
+![alt text](image-33.png)
+![alt text](image-34.png)
+接着，使用cmake生成python绑定，必须成功生成与.idl同名的.py文件
+```bash
+cmake .
+make
+```
+![alt text](image-35.png)
+![alt text](image-36.png)
+
+### 4.2 运行例程代码
+
+运行我们写好的例程代码：
+```bash
+python Node1.py
+```
+你可能会碰到一个错误：
+```
+(ddsT) remake@remake:~/dds_test_example$ python Node1.py
+Traceback (most recent call last):
+  File "/home/remake/dds_test_example/Node1.py", line 2, in <module>
+    from machine import DDSMachine
+  File "/home/remake/dds_test_example/machine.py", line 3, in <module>
+    import fastdds
+  File "/home/remake/Fast-DDS-python/install/fastdds_python/lib/python3.11/site-packages/fastdds.py", line 15, in <module>
+    import _fastdds_python
+ImportError: /home/remake/miniconda3/envs/ddsT/bin/../lib/libstdc++.so.6: version `GLIBCXX_3.4.30' not found (required by /home/remake/Fast-DDS-python/install/fastrtps/lib/libfastrtps.so.2.13)
+```
+因为我们使用的是conda，故在conda中强制安装一个兼容版本的libstdc++库来解决这个问题:
+```bash
+conda install -c conda-forge libstdcxx-ng
+```
+![alt text](image-38.png)
+**注意：这一步中，如果你的虚拟机是4GB内存，很有可能会导致内存不够用而更新失败。如果你实在不能为虚拟机分配更多内存，你可以尝试使用虚拟内存或者其他方法来解决此问题。**
+
+继续运行我们写好的例程代码：
+```bash
+python Node1.py
+python Node2.py
+```
+你需要打开两个终端，一个运行Node1，一个运行Node2。Node1是发布者，用于产生数据并发布，Node2是订阅者，用于收到数据并打印。
+![alt text](image-39.png)
+
+## 5 在两台虚拟机上进行FastDDS通信
+
+为了测试dds的多机通信，我们使用两台虚拟机，一台运行Node1，一台运行Node2。**为了防止你重走之前的过程，在这里直接将我们已经配置好的虚拟机克隆一份。**
+当然，克隆过来的虚拟机并不能够拿来直接用，所以请仔细看下面的步骤。
+
+### 5.1 克隆虚拟机并正确设置其网络
+关闭虚拟机并克隆
+![alt text](image-40.png)
+![alt text](image-41.png)
+![alt text](image-42.png)
+将两台虚拟机都启动
+![alt text](image-43.png)
+**由于克隆过来的虚拟机使用了之前机的ip地址，这会导致网络冲突，所以我们要在克隆机上进行操作，让它获取新的IP地址。**
+
+#### 使用 `dhclient` 命令
+
+`dhclient` 是一个常用的命令行工具，用于配置和管理网络接口的 DHCP 设置。您可以使用它来释放当前的 IP 地址并请求一个新的地址。
+
+1. **释放当前 IP 地址**：
+   ```bash
+   sudo dhclient -r
+   ```
+   这个命令会释放指定网络接口上的当前 DHCP 租约。如果您想指定特定的网络接口（比如 `eth0`），可以使用：
+   ```bash
+   sudo dhclient -r eth0
+   ```
+
+2. **重新获取 IP 地址**：
+   ```bash
+   sudo dhclient
+   ```
+   同样，如果需要针对特定接口，使用：
+   ```bash
+   sudo dhclient eth0
+   ```
+操作完成后，重启克隆机
+```bash
+reboot
+```
+![alt text](image-44.png)
+你可以看到，克隆机获取了一个新的ip地址。
+
+### 5.2 在终端上进行多机测试
+接下来，你可以在terminus上分别连接两个终端
+![alt text](image-45.png)
+接着，运行我们的代码：
+![alt text](image-46.png)
+
+这样，你就完成了在VMware上使用两个虚拟机进行dds多机测试的步骤!
+
+### 5.3 additional tips
+
+1. 克隆的虚拟机由于复制了所有的东西，有可能在其他地方会引起冲突，例如完全一致的主机名、用户账户等。你可以查阅相关资料解决这些冲突。
+2. 在走完我们整个教程后，建议你将其作为最原始的虚拟机系统备份，如果你需要在虚拟机上使用pycharm或者其他ide来对代码进行开发，又或是想要安装其他的环境或者软件，建议你在克隆机上进行。
+3. 这种网络通信建立在虚拟机以NAT模式进行(一般是vm的默认模式)的情况下，如果你的vmware默认设置的是其他模式，你需要将其修改过来。
+
 
 ##参考文章
 
-vm虚拟机资源：https://www.bilibili.com/video/BV1Vg4y1w7Es
-Linux installation from sources：https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html
+1. vm虚拟机资源:https://www.bilibili.com/video/BV1Vg4y1w7Es
+2. Linux installation from sources:https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html
+3. Writing a simple Python publisher and subscriber application:https://fast-dds.docs.eprosima.com/en/latest/fastdds/getting_started/simple_python_app/simple_python_app.html#
+4. ChatGPT:https://chat.openai.com/
