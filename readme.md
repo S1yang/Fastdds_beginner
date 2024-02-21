@@ -3,15 +3,16 @@
 用于帮助搭建FastDDS测试用的环境，运行我们的代码。
 通过走完该步骤，你能够在你的linux上进行FastDDS-python绑定的代码测试和开发。
 注：教程中有些步骤可能是冗余的，如果你的水平够高，可以尝试忽略。
+
 仓库地址:https://github.com/S1yang/Fastdds_beginner
 
 ## 内容说明
 
 该文档包含以下的一些软件的入门要求，在此基础上尽量做到通俗易懂：
-1.VScode 
-2.Linux(ubuntu-22.04)和Vmware
-3.python与anaconda
-4.more...
+1. VScode 
+2. Linux(ubuntu-22.04)和Vmware
+3. python与anaconda
+4. more...
 
 ## 1 安装Linux操作系统
 
@@ -25,7 +26,9 @@
 #### 1.1.1虚拟机的下载和安装
 
 虚拟机安装包下载链接：https://pan.baidu.com/s/1fmgsY5-qFn-_WzJs31Q8lg  提取码：xiao
+
 虚拟机安装网址：vmware下载_vmware下载免费中文版客户端[虚拟机]-下载之家 (downza.cn)
+
 密钥：JU090-6039P-08409-8J0QH-2YR7F
 
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image.png)
@@ -33,6 +36,7 @@
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-1.png)
 
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-17-06.png)
+
 **[注意]这里最好开8个G的内存**
 
 ![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-21-10.png)
