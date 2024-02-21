@@ -28,23 +28,23 @@
 虚拟机安装网址：vmware下载_vmware下载免费中文版客户端[虚拟机]-下载之家 (downza.cn)
 密钥：JU090-6039P-08409-8J0QH-2YR7F
 
-![](image.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image.png)
 
-![](image-1.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-1.png)
 
 **[注意]这里最好开8个G的内存**
-![](2024-02-20-15-17-06.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-17-06.png)
 
 
-![](2024-02-20-15-21-10.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-21-10.png)
 
-![](2024-02-20-15-22-26.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-15-22-26.png)
 
-![alt text](image-5.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-5.png)
 
 其他未经标注的地方，一律done。
 
-![alt text](image-6.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-6.png)
 
 创建并运行一个虚拟机后，你需要安装vmtools，这部分可以参考GPT给的答案：
 
@@ -111,28 +111,28 @@
 
 使用 `open-vm-tools` 是在 Ubuntu 虚拟机上安装 VMware Tools 的推荐方法，因为它能够提供与 VMware 提供的原版 VMware Tools 相同的主要功能，且安装过程更简单、更快捷。
 
-![alt text](image-7.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-7.png)
 安装成功后，你可以输入如下指令来进行验证。
 ```bash 
 vmware-toolbox-cmd -v
 ```
-![alt text](image-8.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-8.png)
 
 
 #### 1.1.2 使用terminus来与你的虚拟机交互（可选）
 
 使用terminus来管理你的终端，实现**更舒服**的交互。
 要实现这项功能，你需要在安装的时候把OpenSSH装上，然后你可能需要输入 ip addr来拿到SSH的地址。
-![](2024-02-20-14-49-13.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-14-49-13.png)
 *通过SSH进行cmd交互*
-![](2024-02-20-14-49-25.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-14-49-25.png)
 *通过ftp进行文件的传输和文件的管理*
     
 
 ### 1.2 WSL虚拟机（弃用）
 
 相比于Vmware，WSL的优点是方便你可以直接使用主机的vscode或其他的编辑器去修改代码进行测试，可以直接通过windows的文件夹访问到linux文件夹。
-![](2024-02-20-14-38-38.png)
+![](https://github.com/S1yang/Fastdds_beginner/blob/main/img/2024-02-20-14-38-38.png)
 但是它有个缺点，**它的网络模式使得我还没解决两台WSL虚拟机进行网络通信的问题**，这个问题使得我们不能进行多机的DDS代码调试。所以该方法基本上已经被弃用了。
 
 
@@ -146,7 +146,7 @@ miniconda是anaconda的精简版本，[在此处可以进行安装。](https://d
 ```bash
 source ~/.bashrc
 ```
-![alt text](image-10.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-10.png)
 
 当出现(base)时，说明我们的conda已经装好了。
 接着我们创建一个我们代码运行需要的环境，并激活该环境，最好将该环境直接添加到启动脚本里去。
@@ -172,18 +172,19 @@ conda deactivate
 sudo apt install nano
 nano ~/.bashrc
 ```
-![alt text](image-11.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-11.png)
 
 ```bash
 source ~/.bashrc
 ```
 到目前为止，确保你正确地安装了conda，并创建了一个python==3.11.5的环境，你在linux下激活了该环境，这样我们就可以进行到下一步。
-![alt text](image-12.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-12.png)
 
 
 ## 3 FastDDS-python绑定的安装
 
 此为该文档中最重要也是内容最多的一步，由于[原本的教程](https://fast-dds.docs.eprosima.com/en/latest/installation/sources/sources_linux.html)写的很散乱，且会遇到大大小小的坑，故在此对整个流程进行梳理。
+
 ###3.1 依赖项的安装
 
 
@@ -193,28 +194,29 @@ sudo apt install libasio-dev libtinyxml2-dev
 sudo apt install libssl-dev
 ```
 
-![alt text](image-13.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-13.png)
 
-![alt text](image-14.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-14.png)
 
-![alt text](image-15.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-15.png)
 
-![alt text](image-16.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-16.png)
 
 ### 3.2 Fast DDS Python bindings 安装
 ```bash
 pip3 install -U colcon-common-extensions vcstool
 ```
 *这一步时间比较长*
-![alt text](image-17.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-17.png)
 
 
 ```bash
 sudo apt install swig
 sudo apt install libpython3-dev
 ```
-![alt text](image-20.png)
-![alt text](image-21.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-20.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-21.png)
+
 ```bash
 mkdir ~/Fast-DDS-python
 cd ~/Fast-DDS-python
@@ -222,11 +224,14 @@ wget https://raw.githubusercontent.com/eProsima/Fast-DDS-python/main/fastdds_pyt
 mkdir src
 vcs import src < fastdds_python.repos
 ```
+
 这一步有个坑点，wget那一步下载不下来，你可以去这个网站上把这个链接中的文本复制下来，然后在本地创建一个fastrtps.repos，把文件内容写进去：
+
 ```bash
 touch fastdds_python.repos
 nano fastdds_python.repos
 ```
+
 ```
 repositories:
     foonathan_memory_vendor:
@@ -254,10 +259,12 @@ repositories:
         url: https://github.com/eProsima/IDL-Parser.git
         version: master
 ```
-![alt text](image-22.png)
+
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-22.png)
 最后一步从vcs导入也特别容因为网络问题导错，你可以在我上传的文件夹里找到完整的。
+
 如果是如下的过程，就说明是成功的：
-![alt text](image-23.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-23.png)
 
 然后，接着在这个Fast-DDS-python目录上，运行如下命令编译：
 注：这个编译过程比较长，耐心等待。
@@ -342,12 +349,12 @@ echo 'source ~/Fast-DDS-python/install/setup.bash' >> ~/.bashrc
 ### 3.3 Fast DDS-Gen 安装
 
 如果你在1.3.2步的源代码导入没问题，你可以在/Fast-DDS-python/src/fastddsgen下找到这个用于安装的文件夹而不用再次下载。
-![alt text](image-24.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-24.png)
 
 ```bash
 sudo apt install openjdk-11-jdk
 ```
-![alt text](image-25.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-25.png)
 
 
 ```bash
@@ -367,21 +374,21 @@ distributionUrl=file:///home/remake/Fast-DDS-python/src/fastddsgen/gradle/wrappe
 zipStoreBase=GRADLE_USER_HOME
 zipStorePath=wrapper/dists
 ```
-![alt text](image-26.png)
-![alt text](image-27.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-26.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-27.png)
 
 接着，继续该命令：
-![alt text](image-29.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-29.png)
 最后，把scripts文件夹添加到环境变量：
 ```bash
 nano ~/.bashrc
 export PATH="$PATH:/home/remake/Fast-DDS-python/src/fastddsgen/scripts"
 source ~/.bashrc
 ```
-![alt text](image-30.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-30.png)
 
 如果你的fastddsgen安装成功，命令窗口输入fastddsgen应该有回应：
-![alt text](image-31.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-31.png)
 
 ## 4 FastDDS-例程的使用
 
@@ -390,20 +397,20 @@ source ~/.bashrc
 ### 4.1 为.idl文件生成python-C艹绑定
 
 将dds_test_example文件夹复制到你的虚拟机中，并进入该目录。
-![alt text](image-32.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-32.png)
 接着，生成在 C++11 中实现此数据类型的源代码以及用于 Python 绑定的 SWIG 接口文件。
 ```bash
 fastddsgen -python DataSet.idl
 ```
-![alt text](image-33.png)
-![alt text](image-34.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-33.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-34.png)
 接着，使用cmake生成python绑定，必须成功生成与.idl同名的.py文件
 ```bash
 cmake .
 make
 ```
-![alt text](image-35.png)
-![alt text](image-36.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-35.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-36.png)
 
 ### 4.2 运行例程代码
 
@@ -427,7 +434,7 @@ ImportError: /home/remake/miniconda3/envs/ddsT/bin/../lib/libstdc++.so.6: versio
 ```bash
 conda install -c conda-forge libstdcxx-ng
 ```
-![alt text](image-38.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-38.png)
 **注意：这一步中，如果你的虚拟机是4GB内存，很有可能会导致内存不够用而更新失败。如果你实在不能为虚拟机分配更多内存，你可以尝试使用虚拟内存或者其他方法来解决此问题。**
 
 继续运行我们写好的例程代码：
@@ -436,7 +443,7 @@ python Node1.py
 python Node2.py
 ```
 你需要打开两个终端，一个运行Node1，一个运行Node2。Node1是发布者，用于产生数据并发布，Node2是订阅者，用于收到数据并打印。
-![alt text](image-39.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-39.png)
 
 ## 5 在两台虚拟机上进行FastDDS通信
 
@@ -444,12 +451,15 @@ python Node2.py
 当然，克隆过来的虚拟机并不能够拿来直接用，所以请仔细看下面的步骤。
 
 ### 5.1 克隆虚拟机并正确设置其网络
+
 关闭虚拟机并克隆
-![alt text](image-40.png)
-![alt text](image-41.png)
-![alt text](image-42.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-40.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-41.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-42.png)
+
 将两台虚拟机都启动
-![alt text](image-43.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-43.png)
+
 **由于克隆过来的虚拟机使用了之前机的ip地址，这会导致网络冲突，所以我们要在克隆机上进行操作，让它获取新的IP地址。**
 
 #### 使用 `dhclient` 命令
@@ -477,14 +487,14 @@ python Node2.py
 ```bash
 reboot
 ```
-![alt text](image-44.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-44.png)
 你可以看到，克隆机获取了一个新的ip地址。
 
 ### 5.2 在终端上进行多机测试
 接下来，你可以在terminus上分别连接两个终端
-![alt text](image-45.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-45.png)
 接着，运行我们的代码：
-![alt text](image-46.png)
+![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-46.png)
 
 这样，你就完成了在VMware上使用两个虚拟机进行dds多机测试的步骤!
 
