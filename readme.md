@@ -141,7 +141,7 @@ vmware-toolbox-cmd -v
 但是它有个缺点，**它的网络模式使得我还没解决两台WSL虚拟机进行网络通信的问题**，这个问题使得我们不能进行多机的DDS代码调试。所以该方法基本上已经被弃用了。
 
 
-##2 miniconda的安装
+## 2 miniconda的安装
 
 miniconda是anaconda的精简版本，[在此处可以进行安装。](https://docs.anaconda.com/free/miniconda/miniconda-install/)
 
