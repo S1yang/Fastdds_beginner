@@ -210,6 +210,16 @@ sudo apt install libssl-dev
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-16.png)
 
 ### 3.2 Fast DDS Python bindings 安装
+
+**注意：为了防止你遇到第4.2节的运行错误却又受限于虚拟机性能过不去，最好运行如下命令：**
+```bash
+ conda install -c conda-forge libstdcxx-ng
+```
+*具体可以见本文4.2节详细描述。*
+
+
+接下来，在你的conda环境下安装用于fastdds编译和安装的包
+
 ```bash
 pip3 install -U colcon-common-extensions vcstool
 ```
@@ -460,6 +470,9 @@ conda install -c conda-forge libstdcxx-ng
 ```
 ![alt text](https://github.com/S1yang/Fastdds_beginner/blob/main/img/image-38.png)
 **注意：这一步中，如果你的虚拟机是4GB内存，很有可能会导致内存不够用而更新失败。如果你实在不能为虚拟机分配更多内存，你可以尝试使用虚拟内存或者其他方法来解决此问题。**
+
+**如果你在这步过不去，而又受限机器性能，建议你创建并使用一个新的conda环境，回到本文的第3.2节，在进行`pip3 install -U colcon-common-extensions vcstool`之前运行该句！**
+
 
 继续运行我们写好的例程代码：
 ```bash
